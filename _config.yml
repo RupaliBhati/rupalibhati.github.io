@@ -129,9 +129,9 @@ author:
       # url: "https://instagram.com/"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://linkedin.com/RupaliBhati" 
+      url: "https://linkedin.com/in/rupalibhati" 
     - label: "CV"
-      icon: "fab fa-fw fa-resume"
+      icon: "fab fa-fw fa-cv"
       url: "/assets/Rupali_Bhati.pdf" 
 
 # Site Footer
