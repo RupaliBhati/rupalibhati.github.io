@@ -131,7 +131,7 @@ author:
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/in/rupalibhati" 
     - label: "CV"
-      icon: "fab fa-fw fa-file"
+      icon: "fab fa-fw fa-file-text"
       url: "/assets/Rupali_Bhati.pdf" 
 
 # Site Footer
