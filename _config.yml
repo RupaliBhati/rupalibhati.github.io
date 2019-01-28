@@ -104,7 +104,7 @@ analytics:
 # Site Author
 author:
   name             : "Rupali Bhati"
-  avatar           : "/assets/Rupali_photo.JPG"
+  avatar           : "/images/Rupali_photo.JPG"
   bio              : "Reinforcement Learning Researcher"
   location         : "New Delhi, India"
   email            : "rupali.bhati4@gmail.com"
