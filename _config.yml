@@ -108,7 +108,7 @@ author:
   bio              : "Reinforcement Learning Researcher"
   location         : "New Delhi, India"
   email            : "rupali.bhati4@gmail.com"
-  github           : "https://github.com/RupaliBhati/"
+  GitHub           : "https://github.com/RupaliBhati/"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -124,7 +124,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      url: "https://github.com/RupaliBhati"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
