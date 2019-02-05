@@ -133,6 +133,9 @@ author:
     - label: "CV"
       icon: "fab fa-fw fa-file-text"
       url: "/assets/Rupali_Bhati.pdf" 
+    - label: "Google Scholar"
+      icon: "fab fa-fw fa-google"
+      url: "https://scholar.google.com/citations?user=iUlabksAAAAJ&hl=en" 
 
 # Site Footer
 footer:
