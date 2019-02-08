@@ -10,5 +10,5 @@ I worked as a Research Assitant at Indraprastha Institute of Technology under th
 
 **Publications:**
 
-[A Reinforcement Learning Approach to Jointly Adapt Vehicular Communications and Planning for Optimized Driving](https://ieeexplore.ieee.org/abstract/document/8569484)
+[A Reinforcement Learning Approach to Jointly Adapt Vehicular Communications and Planning for Optimized Driving](https://ieeexplore.ieee.org/abstract/document/8569484)  
 *Intelligent Transportation Systems Conference, 2018*
