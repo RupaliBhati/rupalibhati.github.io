@@ -1,7 +1,7 @@
 ---
 title: "About"
-permalink: 
-  
+permalink: /about/ 
+
 ---
 
 My research interests are reinforcement learning, machine learning and deep learning. I am an experienced independent researcher with a penchant for teaching.
