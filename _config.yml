@@ -117,7 +117,7 @@ author:
       url: "https://scholar.google.com/citations?user=iUlabksAAAAJ&hl=en"       
     - label: "CV"
       icon: "fas fa-file-pdf"
-      url: "/assets/Rupali_Bhati_CV.pdf" 
+      url: "/assets/Rupali_Bhati.pdf" 
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
