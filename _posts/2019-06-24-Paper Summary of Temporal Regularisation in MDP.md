@@ -1,6 +1,6 @@
 ---
 title: "Paper Summary of Temporal Regularisation in Markov Decision Process [Thodoroff et al., 2018]"
-date: 2019-06-24
+# date: 2019-06-24
 tags: [reinforcement learning, MDP, regularisation]
 excerpt: "Summary of Temporal Regularisation in MDP by P.Thodoroff, A.Durand, J.Pineau, and D.Precup. Published at NeurIPS, 2018."
 ---
