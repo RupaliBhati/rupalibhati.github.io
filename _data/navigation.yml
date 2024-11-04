@@ -2,6 +2,8 @@
 main:
   - title: "Reinforcement Learning"
     url: /reinforcement-learning/
+  - title: "Mentorship"
+    url: /mentorship/    
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
