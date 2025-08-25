@@ -16,3 +16,8 @@ author_profile: true
 | Prarthana Krishnamurthy | Northeastern University  |
 | Abhranil Chandra | University of Waterloo | 
 | Karush Suri   |   Valence Labs, Montreal |
+| Jared Winslow | Stanford University and Columbia University |
+| Dhruv Shah | DA-IICT, Gandhinagar |
+| Anant Garg | International Institute of Information Technology, Hyderabad |
+| Omotomi Eniola Samuel | |
+| Benjamin Kinikonen | KNUST-Ghana |
