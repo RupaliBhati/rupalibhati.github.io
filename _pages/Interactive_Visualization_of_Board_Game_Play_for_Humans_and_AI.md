@@ -64,12 +64,11 @@ created a game engine as explained below.
 
 We built a Tic-Tac-Toe website[^1] to collect data. This website was
 created using React and TypeScript.
-Figure [1](#fig:wesbite_UI){reference-type="ref"
-reference="fig:wesbite_UI"} shows the user interface of the website.
+Figure [1](#fig:wesbite_UI) shows the user interface of the website.
 Here, a game ID is generated for each game. Moreover, we ask the players
 to enter their names and their experience levels to aggregate over
 players and experience levels. In
-Figure [2](#fig:Game_UI){reference-type="ref" reference="fig:Game_UI"},
+Figure [2](#fig:Game_UI),
 we show one game. In the top half of the figure, we see the game being
 played. In the lower half, we show a table preview of the actual data
 that we are logging. Each row is a move from the player. The columns of
@@ -87,19 +86,24 @@ before moving to the next row. The move history on the interface
 displays only part of the data that we collected and uploaded to the
 database.
 
-![User interface of the website used to collect
-data](Milestone_2/figures/wesbite_UI.png){#fig:wesbite_UI width="80%"}
+<figure id="fig:wesbite_UI">
+  <img src="../assets/Interactive_viz_images/wesbite_UI.png" alt="User interface of the website used to collect data" style="width: 50%;">
+  <figcaption>Figure 1: User interface of the website used to collect data.</figcaption>
+</figure>
 
-![Data Collection UI that shows the interactive game board and a preview
-of logged move history.](Milestone_2/figures/Game_UI.png){#fig:Game_UI
-width="80%"}
+
+
+<figure id="fig:Game_UI">
+  <img src="../assets/Interactive_viz_images/Game_UI.png" alt="Data Collection UI that shows the interactive game board and a preview of logged move history." style="width: 50%;">
+  <figcaption>Figure 2: Data Collection UI that shows the interactive game board and a preview of logged move history.</figcaption>
+</figure>
 
 We collected all user data using a Firestore database [^2]. There are
 two dataset beings stored: games and moves. The "games" dataset stores
 all the game information, such as the player name, experience level, and
 game duration. The "moves" dataset stores all individual moves
 information, such as the previous and current board state (S and S' in
-Fig [2](#fig:Game_UI){reference-type="ref" reference="fig:Game_UI"}),
+Fig [2](#fig:Game_UI)),
 current move, player, outcome, and game ID that associates the move data
 to the game data.
 
@@ -182,8 +186,7 @@ We conducted affinity diagramming and abstracted the domain tasks
 following Brehmer & Munzner's typology. We further ranked the task
 priority by their levels of importance. The task analysis results are
 represented in
-Table [\[tab:domain_tasks\]](#tab:domain_tasks){reference-type="ref"
-reference="tab:domain_tasks"}.
+Table [\[tab:domain_tasks\]](#tab:domain_tasks).
 
 We focused on three core tasks: for each move on the board, viewing the
 next move recommendations made by different AI agents or the most
@@ -197,16 +200,18 @@ computing win rates from the data we collected (with a small sample
 size) could be inaccurate, while showing the most frequent human next
 move would be more understandable and feasible based on our datasets.
 
-::: table*
-      **Domain Task**                                            **Abstraction**              **Task Level**   **Stakeholder**   **Priority**
-  --- ---------------------------------------------------------- ---------------------------- ---------------- ----------------- ------------------
-  1   View move recommendations made by different AI agents      Analyze: consume: discover   High Level       Both              Most important
-  2   Know the most frequent next moves made by human players    Query: compare               Low Level        Player            Most important
-  3   Know the distribution of AI's next move probabilities      Query: summarize             Low Level        Both              Most important
-  4   Identify the win rate or optimality of a move              Analyze: consume: discover   High Level       Both              Medium important
-  5   Find the percentage of people playing optimal strategies   Query: summarize             Low Level        Researcher        Least important
-  6   Investigate the first-move advantage                       Analyze: produce: derive     High Level       Researcher        Least important
-:::
+
+
+|        |    Domain Task         |  Abstraction | Task Level |  Stakeholder |  Priority |
+| ------------- |:-------------:|  :-------------:|:-------------:|:-------------:|  -----:|
+| 1 |   View move recommendations made by different AI agents    | Analyze, consume, discover | High Level |Both |  Most important|
+|  2  |Know the most frequent next moves made by human players   | Query, compare              | Low Level       | Player           | Most important |
+|  3  | Know the distribution of AI's next move probabilities     | Query, summarize            | Low Level      |  Both             | Most important |
+|  4   |Identify the win rate or optimality of a move             | Analyze, consume, discover   |High Level      | Both            |  Medium important|
+|  5  | Find the percentage of people playing optimal strategies  | Query, summarize           |  Low Level       | Researcher       | Least important|
+|  6  | Investigate the first-move advantage                      | Analyze, produce, derive    | High Level      | Researcher       | Least important|
+
+
 
 # Design Process
 
@@ -214,8 +219,7 @@ move would be more understandable and feasible based on our datasets.
 
 We sketched our interface based on the interview findings and domain
 task analysis. In
-Figure [3](#fig:digital_prototype_main){reference-type="ref"
-reference="fig:digital_prototype_main"}, the left section is the game
+Figure [3](#fig:digital_prototype_main), the left section is the game
 being played, and the right section is a visualization board showing
 recommended moves by AI agent 1 (AI-1) in blue, AI agent 2 (AI-2) in
 green, and Human in red. The two AI agents are two different algorithms
@@ -223,18 +227,17 @@ recommending their best move. The Human move is the most common move
 taken by humans based on our collected data. This visualization provides
 an overview of human and AI strategies at a board state.
 
-![Digital sketch of
-visualization](Milestone_2/figures/digital_prototype_main.pdf){#fig:digital_prototype_main
-width="\\linewidth"}
+<figure id="fig:digital_prototype_main">
+  <img src="../assets/Interactive_viz_images/digital_prototype_main.png" alt="Digital sketch of visualization" style="width: 50%;">
+  <figcaption>Figure 3: Digital sketch of visualization.</figcaption>
+</figure>
 
-As shown in Figure [3](#fig:digital_prototype_main){reference-type="ref"
-reference="fig:digital_prototype_main"}, there are four interactive
+As shown in Figure [3](#fig:digital_prototype_main), there are four interactive
 actions that a user can take from this screen:
 
 1.  **Action 1: Make a move on the board** When a player makes a move on
     the board, the visualization changes as shown in
-    Figure [4](#fig:Action_1){reference-type="ref"
-    reference="fig:Action_1"}. Note that the recommendation board is
+    Figure [4](#fig:Action_1). Note that the recommendation board is
     linked to the game and also changes. In this case, the AI-1 and the
     Human are recommending the same move. We chose to display human or
     AI suggested moves on a board in parallel so users could easily view
@@ -242,48 +245,51 @@ actions that a user can take from this screen:
     the same board, the visualization also supports comparison between
     human/AI or AI/AI strategies.
 
-    ![Action 1: Make a move on the
-    board](Milestone_2/figures/Action_1.pdf){#fig:Action_1 width="90%"}
+    <figure id="fig:Action_1">
+      <img src="../assets/Interactive_viz_images/Action_1.png" alt="Action 1: Make a move on the board" style="width: 50%;">
+      <figcaption>Figure 4: Action 1: Make a move on the board.</figcaption>
+    </figure>
+
 
 2.  **Action 2: Select or deselect player strategies** The player can
     select or deselect which recommendations they want to see. For
     example, if the player only wants to see the recommendations from
     the Human, they may deselect AI-1 and AI-2 as shown in
-    Figure [5](#fig:Action_2){reference-type="ref"
-    reference="fig:Action_2"}. We chose to use the filtering technique
+    Figure [5](#fig:Action_2). We chose to use the filtering technique
     to enable the player to customize particular combination of
     recommendations that they want. For example, selecting AI-1 and AI-2
     together to compare AI strategies or selecting AI-1 and human to
     compare the decisions between human players and AI-1.
 
-    ![Action 2: Select or deselect player
-    strategies](Milestone_2/figures/Action_2.pdf){#fig:Action_2
-    width="90%"}
+    <figure id="fig:Action_2">
+      <img src="../assets/Interactive_viz_images/Action_2.png" alt="Action 2: Select or deselect player strategies" style="width: 50%;">
+      <figcaption>Figure 5: Action 2: Select or deselect player strategies.</figcaption>
+    </figure>
 
 3.  **Action 3: Click on AI-1 to see a heatmap of the probability of the
     next move** When a player clicks on AI-1 on the recommendation
     board, a heatmap of AI-1's probability of the next move will appear
     on the screen as shown in
-    Figure [6](#fig:Action_3){reference-type="ref"
-    reference="fig:Action_3"}. We chose to use details-on-demand
+    Figure [6](#fig:Action_3). We chose to use details-on-demand
     technique to avoid overloading players while helping a player
     understand the distribution of AI suggested moves.
 
-    ![Action 3: Click on AI-1 to see a heatmap of the probability of the
-    next move](Milestone_2/figures/Action_3.pdf){#fig:Action_3
-    width="90%"}
+    <figure id="fig:Action_3">
+      <img src="../assets/Interactive_viz_images/Action_3.png" alt="Action 3: Click on AI-1 to see a heatmap of the probability of the next move" style="width: 50%;">
+      <figcaption>Figure 6: Action 3: Click on AI-1 to see a heatmap of the probability of the next move.</figcaption>
+    </figure>
 
 4.  **Action 4: Click on AI-2 to see a heatmap of the probability of the
     next move** Similar to action 3, when a player clicks on AI-2 on the
     recommendation board, a heatmap of AI-2's probability of the next
     move will appear on the screen as shown in
-    Figure [7](#fig:Action_4){reference-type="ref"
-    reference="fig:Action_4"}. We keep actions 3 and 4 separate to not
+    Figure [7](#fig:Action_4). We keep actions 3 and 4 separate to not
     overwhelm the player with too much information.
 
-    ![Action 4: Click on AI-2 to see a heatmap of the probability of the
-    next move](Milestone_2/figures/Action_4.pdf){#fig:Action_4
-    width="\\linewidth"}
+    <figure id="fig:Action_4">
+      <img src="../assets/Interactive_viz_images/Action_4.png" alt="Action 4: Click on AI-2 to see a heatmap of the probability of the next move" style="width: 50%;">
+      <figcaption>Figure 7: Action 4: Click on AI-2 to see a heatmap of the probability of the next move.</figcaption>
+    </figure>
 
 ## Usability Testing
 
@@ -358,55 +364,50 @@ leaving the probability details available only upon request.
 ### User Interface
 
 In our visualization, there are two boards as shown in
-Figure [8](#fig:interface-all){reference-type="ref"
-reference="fig:interface-all"}. On the left side is the *Game Board*
+Figure [8](#fig:interface-all). On the left side is the *Game Board*
 where the game is being played. On the right side is the *Recommendation
 Visualization*, which shows the recommendations of the two AI agents and
 the most probable human move.
 
-![User
-Interface](Milestone_4/figures/interface-all.png){#fig:interface-all
-width="70%"}
+<figure id="fig:interface-all">
+  <img src="../assets/Interactive_viz_images/interface-all.png" alt="User Interface" style="width: 50%;">
+  <figcaption>Figure 8: User Interface.</figcaption>
+</figure>
 
 We have implemented the following interactive actions:
 
 1.  Action 1: Make a move on the board. A player can make a move on the
-    game board (see Figure [8](#fig:interface-all){reference-type="ref"
-    reference="fig:interface-all"}) by clicking on the cell where they
+    game board (see Figure [8](#fig:interface-all)) by clicking on the cell where they
     want to play
 
 2.  Action 2: Select or deselect player strategies. We implemented the
     functionality to select and deselect player strategies. In
-    Figure [9](#fig:checkbox){reference-type="ref"
-    reference="fig:checkbox"}, we have selected the AI-1 and the Human
+    Figure [9](#fig:checkbox), we have selected the AI-1 and the Human
     strategy, while we have deselected the AI-2 strategy.
 
-    ![Users can select or deselection the player strategies using the
-    checkbox. In the figure, when strategies overlap, we use a Venn
-    Diagram to represent them in the same
-    cell.](Milestone_4/figures/checkbox-collision.png){#fig:checkbox
-    width="70%"}
+    <figure id="fig:checkbox">
+      <img src="../assets/Interactive_viz_images/checkbox-collision.png" alt="Users can select or deselection the player strategies using the checkbox. In the figure, when strategies overlap, we use a Venn Diagram to represent them in the same cell." style="width: 50%;">
+      <figcaption>Figure 9: Users can select or deselection the player strategies using the checkbox. In the figure, when strategies overlap, we use a Venn Diagram to represent them in the same cell.</figcaption>
+    </figure>
 
 3.  Action 3: Click on AI-1 or AI-2 to see a heatmap of the probability
     of the next move. When the user clicks on a recommendation in the
     Recommendation Visualization board, a heatmap will pop up as shown
-    in Figure [10](#fig:heatmap1){reference-type="ref"
-    reference="fig:heatmap1"} and Figure
-     [11](#fig:heatmap2){reference-type="ref" reference="fig:heatmap2"}.
+    in Figure [10](#fig:heatmap1) and Figure
+     [11](#fig:heatmap2).
     The heatmap shows the probabilities of each move recommended by the
     AI agent. Hovering over the heatmap will display a detailed
     probability that the position has.
 
-    ![The probability heatmap of AI-1 which indicates the middle
-    position at the move with highest
-    probability.](Milestone_4/figures/heatmap-ai1.png){#fig:heatmap1
-    width="70%"}
+    <figure id="fig:heatmap1">
+      <img src="../assets/Interactive_viz_images/heatmap-ai1.png" alt="The probability heatmap of AI-1 which indicates the middle position at the move with highest probability." style="width: 50%;">
+      <figcaption>Figure 10: The probability heatmap of AI-1 which indicates the middle position at the move with highest probability.</figcaption>
+    </figure>
 
-    ![The probability heatmap of AI-2 which indicates the middle
-    position at the move with least probability. It indicates that AI-2
-    has worse performance than
-    AI-1.](Milestone_4/figures/heatmap-ai2.png){#fig:heatmap2
-    width="70%"}
+    <figure id="fig:heatmap2">
+      <img src="../assets/Interactive_viz_images/heatmap-ai2.png" alt="The probability heatmap of AI-2 which indicates the middle position at the move with least probability. It indicates that AI-2 has worse performance than AI-1." style="width: 50%;">
+      <figcaption>Figure 11: The probability heatmap of AI-2 which indicates the middle position at the move with least probability. It indicates that AI-2 has worse performance than AI-1.</figcaption>
+    </figure>
 
 In addition, the interface includes an information icon that reminds
 users about the probability heatmap interaction. It also has a separate
@@ -440,7 +441,7 @@ From our observation of the human data, we noted that X players (who
 play first) often tend to begin with the middle board position (i.e.,
 position 4). Next, an interesting trend was that for the next move, if
 the O player did not play the corner move (i.e., position 0, 2, 6, 8), O
-would lose the game if X followed with optimal moves.\
+would lose the game if X followed with optimal moves.
 
 # Conclusion
 
