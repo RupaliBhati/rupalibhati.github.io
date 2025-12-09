@@ -86,17 +86,33 @@ before moving to the next row. The move history on the interface
 displays only part of the data that we collected and uploaded to the
 database.
 
-<figure id="fig:wesbite_UI">
-  <img src="/assets/Interactive_viz_images/wesbite_UI.png" alt="User interface of the website used to collect data" style="width: 50%; display: block; margin: 0 auto;">
-  <figcaption>Figure 1: User interface of the website used to collect data.</figcaption>
-</figure>
+<div style="text-align: center;">
+  <figure id="fig:wesbite_UI" style="display: inline-block; text-align: center;">
+    <img
+      src="/assets/Interactive_viz_images/wesbite_UI.png"
+      alt="User interface of the website used to collect data"
+      style="width: 50%; max-width: 100%;"
+    >
+    <figcaption style="margin-top: 0.5rem;">
+      Figure 1: User interface of the website used to collect data.
+    </figcaption>
+  </figure>
+</div>
 
 
 
-<figure id="fig:Game_UI">
-  <img src="/assets/Interactive_viz_images/Game_UI.png" alt="Data Collection UI that shows the interactive game board and a preview of logged move history." style="width: 50%;">
-  <figcaption>Figure 2: Data Collection UI that shows the interactive game board and a preview of logged move history.</figcaption>
-</figure>
+<div style="text-align: center;">
+  <figure id="fig:Game_UI" style="display: inline-block; text-align: center;">
+    <img
+      src="/assets/Interactive_viz_images/Game_UI.png"
+      alt="Data Collection UI that shows the interactive game board and a preview of logged move history."
+      style="width: 50%; max-width: 100%;"
+    >
+    <figcaption style="margin-top: 0.5rem;">
+      Figure 2: Data Collection UI that shows the interactive game board and a preview of logged move history.
+    </figcaption>
+  </figure>
+</div>
 
 We collected all user data using a Firestore database [^2]. There are
 two dataset beings stored: games and moves. The "games" dataset stores
@@ -227,10 +243,18 @@ recommending their best move. The Human move is the most common move
 taken by humans based on our collected data. This visualization provides
 an overview of human and AI strategies at a board state.
 
-<figure id="fig:digital_prototype_main">
-  <img src="/assets/Interactive_viz_images/digital_prototype_main.png" alt="Digital sketch of visualization" style="width: 50%;">
-  <figcaption>Figure 3: Digital sketch of visualization.</figcaption>
-</figure>
+<div style="text-align: center;">
+  <figure id="fig:digital_prototype_main" style="display: inline-block; text-align: center;">
+    <img
+      src="/assets/Interactive_viz_images/digital_prototype_main.png"
+      alt="Digital sketch of visualization"
+      style="width: 50%; max-width: 100%;"
+    >
+    <figcaption style="margin-top: 0.5rem;">
+      Figure 3: Digital sketch of visualization.
+    </figcaption>
+  </figure>
+</div>
 
 As shown in Figure [3](#fig:digital_prototype_main), there are four interactive
 actions that a user can take from this screen:
@@ -245,10 +269,18 @@ actions that a user can take from this screen:
     the same board, the visualization also supports comparison between
     human/AI or AI/AI strategies.
 
-    <figure id="fig:Action_1">
-      <img src="/assets/Interactive_viz_images/Action_1.png" alt="Action 1: Make a move on the board" style="width: 50%;">
-      <figcaption>Figure 4: Action 1: Make a move on the board.</figcaption>
-    </figure>
+    <div style="text-align: center;">
+      <figure id="fig:Action_1" style="display: inline-block; text-align: center;">
+        <img
+          src="/assets/Interactive_viz_images/Action_1.png"
+          alt="Action 1: Make a move on the board"
+          style="width: 50%; max-width: 100%;"
+        >
+        <figcaption style="margin-top: 0.5rem;">
+          Figure 4: Action 1: Make a move on the board.
+        </figcaption>
+      </figure>
+    </div>
 
 
 2.  **Action 2: Select or deselect player strategies** The player can
@@ -261,10 +293,18 @@ actions that a user can take from this screen:
     together to compare AI strategies or selecting AI-1 and human to
     compare the decisions between human players and AI-1.
 
-    <figure id="fig:Action_2">
-      <img src="/assets/Interactive_viz_images/Action_2.png" alt="Action 2: Select or deselect player strategies" style="width: 50%;">
-      <figcaption>Figure 5: Action 2: Select or deselect player strategies.</figcaption>
-    </figure>
+    <div style="text-align: center;">
+      <figure id="fig:Action_2" style="display: inline-block; text-align: center;">
+        <img
+          src="/assets/Interactive_viz_images/Action_2.png"
+          alt="Action 2: Select or deselect player strategies"
+          style="width: 50%; max-width: 100%;"
+        >
+        <figcaption style="margin-top: 0.5rem;">
+          Figure 5: Action 2: Select or deselect player strategies.
+        </figcaption>
+      </figure>
+    </div>
 
 3.  **Action 3: Click on AI-1 to see a heatmap of the probability of the
     next move** When a player clicks on AI-1 on the recommendation
@@ -274,10 +314,18 @@ actions that a user can take from this screen:
     technique to avoid overloading players while helping a player
     understand the distribution of AI suggested moves.
 
-    <figure id="fig:Action_3">
-      <img src="/assets/Interactive_viz_images/Action_3.png" alt="Action 3: Click on AI-1 to see a heatmap of the probability of the next move" style="width: 50%;">
-      <figcaption>Figure 6: Action 3: Click on AI-1 to see a heatmap of the probability of the next move.</figcaption>
-    </figure>
+    <div style="text-align: center;">
+      <figure id="fig:Action_3" style="display: inline-block; text-align: center;">
+        <img
+          src="/assets/Interactive_viz_images/Action_3.png"
+          alt="Action 3: Click on AI-1 to see a heatmap of the probability of the next move"
+          style="width: 50%; max-width: 100%;"
+        >
+        <figcaption style="margin-top: 0.5rem;">
+          Figure 6: Action 3: Click on AI-1 to see a heatmap of the probability of the next move.
+        </figcaption>
+      </figure>
+    </div>
 
 4.  **Action 4: Click on AI-2 to see a heatmap of the probability of the
     next move** Similar to action 3, when a player clicks on AI-2 on the
@@ -286,10 +334,18 @@ actions that a user can take from this screen:
     Figure [7](#fig:Action_4). We keep actions 3 and 4 separate to not
     overwhelm the player with too much information.
 
-    <figure id="fig:Action_4">
-      <img src="/assets/Interactive_viz_images/Action_4.png" alt="Action 4: Click on AI-2 to see a heatmap of the probability of the next move" style="width: 50%;">
-      <figcaption>Figure 7: Action 4: Click on AI-2 to see a heatmap of the probability of the next move.</figcaption>
-    </figure>
+    <div style="text-align: center;">
+      <figure id="fig:Action_4" style="display: inline-block; text-align: center;">
+        <img
+          src="/assets/Interactive_viz_images/Action_4.png"
+          alt="Action 4: Click on AI-2 to see a heatmap of the probability of the next move"
+          style="width: 50%; max-width: 100%;"
+        >
+        <figcaption style="margin-top: 0.5rem;">
+          Figure 7: Action 4: Click on AI-2 to see a heatmap of the probability of the next move.
+        </figcaption>
+      </figure>
+    </div>
 
 ## Usability Testing
 
@@ -369,10 +425,18 @@ where the game is being played. On the right side is the *Recommendation
 Visualization*, which shows the recommendations of the two AI agents and
 the most probable human move.
 
-<figure id="fig:interface-all">
-  <img src="/assets/Interactive_viz_images/interface-all.png" alt="User Interface" style="width: 50%;">
-  <figcaption>Figure 8: User Interface.</figcaption>
-</figure>
+<div style="text-align: center;">
+  <figure id="fig:interface-all" style="display: inline-block; text-align: center;">
+    <img
+      src="/assets/Interactive_viz_images/interface-all.png"
+      alt="User Interface"
+      style="width: 50%; max-width: 100%;"
+    >
+    <figcaption style="margin-top: 0.5rem;">
+      Figure 8: User Interface.
+    </figcaption>
+  </figure>
+</div>
 
 We have implemented the following interactive actions:
 
@@ -385,10 +449,18 @@ We have implemented the following interactive actions:
     Figure [9](#fig:checkbox), we have selected the AI-1 and the Human
     strategy, while we have deselected the AI-2 strategy.
 
-    <figure id="fig:checkbox">
-      <img src="/assets/Interactive_viz_images/checkbox-collision.png" alt="Users can select or deselection the player strategies using the checkbox. In the figure, when strategies overlap, we use a Venn Diagram to represent them in the same cell." style="width: 50%;">
-      <figcaption>Figure 9: Users can select or deselection the player strategies using the checkbox. In the figure, when strategies overlap, we use a Venn Diagram to represent them in the same cell.</figcaption>
-    </figure>
+    <div style="text-align: center;">
+      <figure id="fig:checkbox" style="display: inline-block; text-align: center;">
+        <img
+          src="/assets/Interactive_viz_images/checkbox-collision.png"
+          alt="Users can select or deselection the player strategies using the checkbox. In the figure, when strategies overlap, we use a Venn Diagram to represent them in the same cell."
+          style="width: 50%; max-width: 100%;"
+        >
+        <figcaption style="margin-top: 0.5rem;">
+          Figure 9: Users can select or deselection the player strategies using the checkbox. In the figure, when strategies overlap, we use a Venn Diagram to represent them in the same cell.
+        </figcaption>
+      </figure>
+    </div>
 
 3.  Action 3: Click on AI-1 or AI-2 to see a heatmap of the probability
     of the next move. When the user clicks on a recommendation in the
@@ -399,15 +471,31 @@ We have implemented the following interactive actions:
     AI agent. Hovering over the heatmap will display a detailed
     probability that the position has.
 
-    <figure id="fig:heatmap1">
-      <img src="/assets/Interactive_viz_images/heatmap-ai1.png" alt="The probability heatmap of AI-1 which indicates the middle position at the move with highest probability." style="width: 50%;">
-      <figcaption>Figure 10: The probability heatmap of AI-1 which indicates the middle position at the move with highest probability.</figcaption>
-    </figure>
+    <div style="text-align: center;">
+      <figure id="fig:heatmap1" style="display: inline-block; text-align: center;">
+        <img
+          src="/assets/Interactive_viz_images/heatmap-ai1.png"
+          alt="The probability heatmap of AI-1 which indicates the middle position at the move with highest probability."
+          style="width: 50%; max-width: 100%;"
+        >
+        <figcaption style="margin-top: 0.5rem;">
+          Figure 10: The probability heatmap of AI-1 which indicates the middle position at the move with highest probability.
+        </figcaption>
+      </figure>
+    </div>
 
-    <figure id="fig:heatmap2">
-      <img src="/assets/Interactive_viz_images/heatmap-ai2.png" alt="The probability heatmap of AI-2 which indicates the middle position at the move with least probability. It indicates that AI-2 has worse performance than AI-1." style="width: 50%;">
-      <figcaption>Figure 11: The probability heatmap of AI-2 which indicates the middle position at the move with least probability. It indicates that AI-2 has worse performance than AI-1.</figcaption>
-    </figure>
+    <div style="text-align: center;">
+      <figure id="fig:heatmap2" style="display: inline-block; text-align: center;">
+        <img
+          src="/assets/Interactive_viz_images/heatmap-ai2.png"
+          alt="The probability heatmap of AI-2 which indicates the middle position at the move with least probability. It indicates that AI-2 has worse performance than AI-1."
+          style="width: 50%; max-width: 100%;"
+        >
+        <figcaption style="margin-top: 0.5rem;">
+          Figure 11: The probability heatmap of AI-2 which indicates the middle position at the move with least probability. It indicates that AI-2 has worse performance than AI-1.
+        </figcaption>
+      </figure>
+    </div>
 
 In addition, the interface includes an information icon that reminds
 users about the probability heatmap interaction. It also has a separate
