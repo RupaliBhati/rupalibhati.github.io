@@ -12,4 +12,31 @@ author_profile: true
 
 ### Data
 
-#### Human Data Collection
+#### Human Data
+
+#### AI Data
+
+### Task Analysis
+
+#### Interview Findings
+
+#### Domain Task Analysis
+
+### Design Process
+
+#### Design Sketches
+
+
+#### Usability Testing
+
+### Final Visualization
+
+#### Visual Encoding
+
+#### User Interface
+
+#### Implementation
+
+### Data Analysis
+
+### Conclusion
