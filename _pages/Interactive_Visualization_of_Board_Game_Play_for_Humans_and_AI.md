@@ -12,7 +12,7 @@ author_profile: true
 
 # Motivation
 
-Artificial Intelligence (AI) agents are now achieving superhuman
+Artificial Intelligence (AI) agents are achieving superhuman
 performance in many games. The strategies developed by such agents can
 be used to help human players improve their strategies. Moreover,
 interactive visualisation tools can help users understand complex AI
@@ -57,21 +57,20 @@ available datasets:
     whereas there are a total of 9 moves in the game of Tic-Tac-Toe.
     Therefore, this dataset is not suitable for our analysis.
 
-This renders us in a position to collect our own dataset. We have
-created a game engine as explained below.
+This led us to collect our own dataset, for which we created a custom game engine, 
+described in the following section.
 
 ## Human Data
 
 We built a Tic-Tac-Toe website[^1] to collect data. This website was
 created using React and TypeScript.
-Figure [1](#fig:wesbite_UI) shows the user interface of the website.
+Figure [1](#fig:website_UI) shows the user interface of the website.
 Here, a game ID is generated for each game. Moreover, we ask the players
-to enter their names and their experience levels to aggregate over
-players and experience levels. In
+to enter their names and their experience levels. In
 Figure [2](#fig:Game_UI),
 we show one game. In the top half of the figure, we see the game being
-played. In the lower half, we show a table preview of the actual data
-that we are logging. Each row is a move from the player. The columns of
+played. In the lower half, we show a table preview of the data
+that we are logging. Each row is a move from a player. The columns of
 the table indicate the current state of the board as "S\", the move
 played by a player as "move\", the player who played this move as
 "player\", the next state of the board as "S\", and finally the outcome
@@ -87,9 +86,9 @@ displays only part of the data that we collected and uploaded to the
 database.
 
 <div style="text-align: center;">
-  <figure id="fig:wesbite_UI" style="display: inline-block; text-align: center;">
+  <figure id="fig:website_UI" style="display: inline-block; text-align: center;">
     <img
-      src="/assets/Interactive_viz_images/wesbite_UI.png"
+      src="/assets/Interactive_viz_images/website_UI.png"
       alt="User interface of the website used to collect data"
       style="width: 50%; max-width: 100%;"
     >
@@ -154,7 +153,7 @@ We trained two AI agents:
 #### AI - Agent 1
 
 We trained an agent using the popular reinforcement learning algorithm
-Q-learning [(cite)]{style="color: red"}. Q-learning is a model-free
+Q-learning. Q-learning is a model-free
 method, which makes it especially useful for scaling to games more
 complex than Tic-Tac-Toe. For our experiments, we set the learning rate
 to 0.1 and trained the agent for 10,000 episodes to ensure it had
@@ -163,7 +162,7 @@ sufficient experience to learn effective strategies.
 #### AI - Agent 2
 
 We also trained an agent using a dynamic-programming-based reinforcement
-learning method called Value Iteration [(cite)]{style="color: red"}.
+learning method called Value Iteration.
 This approach is simple and interpretable, making it easy to understand
 how the agent evaluates states and updates its decisions. However,
 because Value Iteration requires sweeping over the entire state space,
@@ -171,18 +170,24 @@ it does not scale well to larger or more complex games. In our setup, we
 used a convergence threshold of 1e-6 and allowed up to 1,000 iterations.
 This means that the algorithm will train until either the value updates
 are less than 1e-6 or until 1000 iterations have been reached. This
-ensures the algorithm reached a stable solution.\
-Note that for both the AI agents, if the probability of multiple moves
-is the same, it randomly breaks ties. Moreover, we have not trained
-these agents fully because the game of Tic-Tac-Toe is too easy, and the
-agents will give optimal answers. We wanted to emulate a scenario where
-the task is complex, and the AI agents and the humans have diverging
-opinions.
+ensures the algorithm reached a stable solution.
+
+Note that for both the AI agents, if there are multiple optimal moves, 
+one of these moves is selected at random and is suggested in the 
+visualisation. Moreover, we wanted to emulate a scenario where
+the task is complex (more complex than Tic-Tac-Toe), and the AI agents 
+and the humans have diverging opinions. Therefore, we have not trained
+the AI agents fully because the game of Tic-Tac-Toe is too easy, and the
+agents will always give similar optimal answers. 
 
 # Task Analysis
 
 ## Interview Findings
 
+We interviewed two participants: a reinforcement learning researcher who 
+uses visualizations to study robotics and AI agents, and and experienced 
+board game player with substantial knowledge in strategic board games, 
+such as Chess, Go, and Tic-Tac-Toe.
 We learned that both participants were interested in comparing different
 AI strategies. P2-player wanted to view AI decisions to compare their
 differences and similarities, while P1-researcher wanted to know the
@@ -201,8 +206,7 @@ rates of game moves to learn about the best decisions.
 We conducted affinity diagramming and abstracted the domain tasks
 following Brehmer & Munzner's typology. We further ranked the task
 priority by their levels of importance. The task analysis results are
-represented in
-Table [\[tab:domain_tasks\]](#tab:domain_tasks).
+represented in the Table below.
 
 We focused on three core tasks: for each move on the board, viewing the
 next move recommendations made by different AI agents or the most
@@ -248,7 +252,7 @@ an overview of human and AI strategies at a board state.
     <img
       src="/assets/Interactive_viz_images/digital_prototype_main.png"
       alt="Digital sketch of visualization"
-      style="width: 50%; max-width: 100%;"
+      style="width: 60%; max-width: 100%;"
     >
     <figcaption style="margin-top: 0.5rem;">
       Figure 3: Digital sketch of visualization.
@@ -274,7 +278,7 @@ actions that a user can take from this screen:
         <img
           src="/assets/Interactive_viz_images/Action_1.png"
           alt="Action 1: Make a move on the board"
-          style="width: 50%; max-width: 100%;"
+          style="width: 60%; max-width: 100%;"
         >
         <figcaption style="margin-top: 0.5rem;">
           Figure 4: Action 1: Make a move on the board.
@@ -298,7 +302,7 @@ actions that a user can take from this screen:
         <img
           src="/assets/Interactive_viz_images/Action_2.png"
           alt="Action 2: Select or deselect player strategies"
-          style="width: 50%; max-width: 100%;"
+          style="width: 60%; max-width: 100%;"
         >
         <figcaption style="margin-top: 0.5rem;">
           Figure 5: Action 2: Select or deselect player strategies.
@@ -319,7 +323,7 @@ actions that a user can take from this screen:
         <img
           src="/assets/Interactive_viz_images/Action_3.png"
           alt="Action 3: Click on AI-1 to see a heatmap of the probability of the next move"
-          style="width: 50%; max-width: 100%;"
+          style="width: 60%; max-width: 100%;"
         >
         <figcaption style="margin-top: 0.5rem;">
           Figure 6: Action 3: Click on AI-1 to see a heatmap of the probability of the next move.
@@ -339,7 +343,7 @@ actions that a user can take from this screen:
         <img
           src="/assets/Interactive_viz_images/Action_4.png"
           alt="Action 4: Click on AI-2 to see a heatmap of the probability of the next move"
-          style="width: 50%; max-width: 100%;"
+          style="width: 60%; max-width: 100%;"
         >
         <figcaption style="margin-top: 0.5rem;">
           Figure 7: Action 4: Click on AI-2 to see a heatmap of the probability of the next move.
@@ -349,7 +353,8 @@ actions that a user can take from this screen:
 
 ## Usability Testing
 
-We conducted our usability testing sessions with 4 students. We first
+After creating the initial design sketches, we conducted our usability 
+testing sessions with 4 students. We first
 asked the participant to play a game of Tic-Tac-Toe and then use our
 visualization tool to review the game that they played. They were also
 encouraged to explore on the interface, including the feature that
@@ -383,14 +388,13 @@ sessions:
 -   Refinement on the visualization interface: All Participants
     commented that our interface was fun, enjoyable, and simple. Still,
     they provided different comments on the future iteration of our
-    interface. P1 suggested using different color coding for "occupied"
-    and "open" cells for players to play on the board. P2 and P4 wanted
+    interface. P2 and P4 wanted
     a different visualization when two AI decisions collided (e.g.,
     alternating color, two symbols in the same cell). Both P3 and P4
     pointed out that having the grid lines in the heatmap could be
     helpful for understanding.
 
-We have addressed the concerns in the final visualization.
+We have addressed these concerns in the final visualization explained below.
 
 # Final Visualization
 
@@ -423,14 +427,20 @@ In our visualization, there are two boards as shown in
 Figure [8](#fig:interface-all). On the left side is the *Game Board*
 where the game is being played. On the right side is the *Recommendation
 Visualization*, which shows the recommendations of the two AI agents and
-the most probable human move.
+the most probable human move. On the top of the webpage, there are separate
+tabs for Data Collection, Visualisation and AI Models.
+The Data Collection tab is used to enter the information of the players when
+they are playing a game that should be added to the human dataset. The Visualisation
+tab is shown in Figure [8](#fig:interface-all). Lastly, the AI models tab
+share the details of the AI models (AI-1 and AI-2) that are used in the
+recommendation visualization.
 
 <div style="text-align: center;">
   <figure id="fig:interface-all" style="display: inline-block; text-align: center;">
     <img
       src="/assets/Interactive_viz_images/interface-all.png"
       alt="User Interface"
-      style="width: 50%; max-width: 100%;"
+      style="width: 60%; max-width: 100%;"
     >
     <figcaption style="margin-top: 0.5rem;">
       Figure 8: User Interface.
@@ -446,15 +456,15 @@ We have implemented the following interactive actions:
 
 2.  Action 2: Select or deselect player strategies. We implemented the
     functionality to select and deselect player strategies. In
-    Figure [9](#fig:checkbox), we have selected the AI-1 and the Human
-    strategy, while we have deselected the AI-2 strategy.
+    Figure [9](#fig:checkbox), we have selected the AI-1 and AI-2 strategy
+    strategy, while we have deselected the Human strategy.
 
     <div style="text-align: center;">
       <figure id="fig:checkbox" style="display: inline-block; text-align: center;">
         <img
           src="/assets/Interactive_viz_images/checkbox-collision.png"
           alt="Users can select or deselection the player strategies using the checkbox. In the figure, when strategies overlap, we use a Venn Diagram to represent them in the same cell."
-          style="width: 50%; max-width: 100%;"
+          style="width: 60%; max-width: 100%;"
         >
         <figcaption style="margin-top: 0.5rem;">
           Figure 9: Users can select or deselection the player strategies using the checkbox. In the figure, when strategies overlap, we use a Venn Diagram to represent them in the same cell.
@@ -469,14 +479,18 @@ We have implemented the following interactive actions:
      [11](#fig:heatmap2).
     The heatmap shows the probabilities of each move recommended by the
     AI agent. Hovering over the heatmap will display a detailed
-    probability that the position has.
+    probability that the position has as shown in Figure
+     [11](#fig:heatmap2). We have updated the heatmap from the design sketches to 
+     authentically represent the difference in the probabilities of moves
+    and emphasize the color contrast for users to be able to differentiate
+    the moves in the heatmap.
 
     <div style="text-align: center;">
       <figure id="fig:heatmap1" style="display: inline-block; text-align: center;">
         <img
           src="/assets/Interactive_viz_images/heatmap-ai1.png"
           alt="The probability heatmap of AI-1 which indicates the middle position at the move with highest probability."
-          style="width: 50%; max-width: 100%;"
+          style="width: 60%; max-width: 100%;"
         >
         <figcaption style="margin-top: 0.5rem;">
           Figure 10: The probability heatmap of AI-1 which indicates the middle position at the move with highest probability.
@@ -489,7 +503,7 @@ We have implemented the following interactive actions:
         <img
           src="/assets/Interactive_viz_images/heatmap-ai2.png"
           alt="The probability heatmap of AI-2 which indicates the middle position at the move with least probability. It indicates that AI-2 has worse performance than AI-1."
-          style="width: 50%; max-width: 100%;"
+          style="width: 60%; max-width: 100%;"
         >
         <figcaption style="margin-top: 0.5rem;">
           Figure 11: The probability heatmap of AI-2 which indicates the middle position at the move with least probability. It indicates that AI-2 has worse performance than AI-1.
@@ -497,10 +511,9 @@ We have implemented the following interactive actions:
       </figure>
     </div>
 
-In addition, the interface includes an information icon that reminds
-users about the probability heatmap interaction. It also has a separate
-tab that explains the AI models (AI-1 and AI-2) that are used in the
-recommendation visualization.
+In addition, the interface includes an information icon next to the 
+Recommendation Visualisation that reminds
+users about the probability heatmap interaction. 
 
 ## Implementation
 
@@ -513,23 +526,31 @@ AI's next moves (heatmap), we used Plotly [^3].
 
 # Data Analysis
 
-Collect more data for humans. Sometimes agents and humans suggest the
-same move. Because of the way the agents are trained and due to
-isomorphism in the game, the probabilities of many moves are closer in
-range. If we train the AI agents for longer, or if we change the game
-such that some moves are more obviously optimal, the probabilities of
-the heatmap will change. The algorithms considered in this study are not
-encouraged to keep the difference in probabilities of moves large. As
-long as the optimal move gives the highest reward, that's good enough
-for the algorithm.
+Our preliminary findings highlight several interesting patterns across both 
+AI and human gameplay. First, from our human gameplay data, we observed that 
+players who take the first
+turn (X) overwhelmingly prefer opening in the center position (position 4). 
+We also noticed a consistent strategic trend: if the O player fails to play 
+a corner move (positions 0, 2, 6, or 8) on their first turn, they are likely to 
+lose the game assuming X plays optimally afterward. This suggests that 
+early-game decisions, especially for O, heavily influence the outcome in human play.
+Collecting more human data will be valuable 
+to have a better estimate of human moves. 
 
-AI-1 is often better and more sure of its choices as compared to AI-2.
+For the AI agents, due to the way our agents were 
+trained—and because many Tic-Tac-Toe board states are isomorphic—the 
+probabilities assigned to different moves often appear close in value. 
+Training the AI agents for more episodes, or modifying the game to include 
+states with more clearly optimal moves, would likely lead to a wider separation 
+in predicted probabilities and more distinct heatmaps. Additionally, the 
+algorithms used in this study are not designed to maximize probability gaps 
+between moves. As long as the optimal move receives the highest expected reward, 
+the agents consider the policy sufficiently good, even if alternative moves have nearly similar probabilities.
+When comparing the two AI systems, AI-1 consistently demonstrated stronger 
+and more confident decision-making than AI-2. These performances can vary
+depending on how much we train each agent.
 
-From our observation of the human data, we noted that X players (who
-play first) often tend to begin with the middle board position (i.e.,
-position 4). Next, an interesting trend was that for the next move, if
-the O player did not play the corner move (i.e., position 0, 2, 6, 8), O
-would lose the game if X followed with optimal moves.
+
 
 # Conclusion
 
@@ -547,9 +568,7 @@ users an even clearer understanding of strategic dynamics. This will
 allow a user to analyse their own moves and compare them to the AI
 models or the most probable human moves.
 
-Authentically representing the difference in the probabilities of moves
-and emphasizing the color contrast for users to be able to differentiate
-the moves in the heatmap.
+
 
 [^1]: https://tic-tac-toe-d1b97.web.app/
 
