@@ -87,7 +87,7 @@ displays only part of the data that we collected and uploaded to the
 database.
 
 <figure id="fig:wesbite_UI">
-  <img src="/assets/Interactive_viz_images/wesbite_UI.png" alt="User interface of the website used to collect data" style="width: 50%;">
+  <img src="/assets/Interactive_viz_images/wesbite_UI.png" alt="User interface of the website used to collect data" style="width: 50%; display: block; margin: 0 auto;">
   <figcaption>Figure 1: User interface of the website used to collect data.</figcaption>
 </figure>
 
